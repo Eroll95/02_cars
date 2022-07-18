@@ -6,19 +6,46 @@
    "engine": {
    "type": "DIESEL",
    "power": 210.0
- },
+   },
    "carBody": {
    "color": "BLACK",
-   "type": "HATCHBACK",
+   "type": "SEDAN",
    "components": [
-     "ABS",
-     "AIR CONDITIONING"
+     "AUTOMATIC TRANSMISSION",
+     "LED HEADLIGHTS",
+     "AIR CONDITIONING",
+     "ALLOY WHEELS",
+     "LEATHER SEATS",
+     "BLUETOOTH"
    ]
  },
    "wheel": {
    "type": "SUMMER",
    "model": "PIRELLI",
    "size": 18
+ }
+},
+  {
+   "model": "HONDA",
+   "price": 60,
+   "mileage": 20000,
+   "engine": {
+   "type": "GASOLINE",
+   "power": 120.0
+ },
+   "carBody": {
+   "color": "WHITE",
+   "type": "HATCHBACK",
+   "components": [
+     "MANUAL TRANSMISSION",
+     "AIR CONDITIONING",
+     "ALLOY WHEELS"
+   ]
+ },
+   "wheel": {
+   "type": "SUMMER",
+   "model": "BRIDGESTONE",
+   "size": 16
  }
 }
 ]

@@ -1,0 +1,28 @@
+[
+{
+   "model": "AUDI",
+   "price": 120,
+   "mileage": 12000,
+   "engine": {
+   "type": 1,
+   "power": 210.0
+   },
+   "carBody": {
+   "color": 1,
+   "type": 1,
+   "components": [
+     "AUTOMATIC TRANSMISSION",
+     "LED HEADLIGHTS",
+     "AIR CONDITIONING",
+     "ALLOY WHEELS",
+     "LEATHER SEATS",
+     "BLUETOOTH"
+   ]
+ },
+   "wheel": {
+   "type": 2,
+   "model": "PIRELLI",
+   "size": 18
+ }
+}
+]

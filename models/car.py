@@ -40,9 +40,9 @@ class Engine:
 
 @dataclass
 class Wheel:
+    type: TyreType
     model: str
     size: int
-    type: TyreType
 
 
 @dataclass
