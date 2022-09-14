@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum, unique
+from decimal import Decimal
 
 
 @unique
@@ -32,6 +33,12 @@ class CarBodyType(Enum):
     ESTATE = 3
 
 
+@unique
+class TyreType(Enum):
+    WINTER = 1
+    SUMMER = 2
+
+
 @dataclass
 class Engine:
     type: EngineType
@@ -55,7 +62,7 @@ class CarBody:
 @dataclass
 class Car:
     model: str
-    price: int
+    price: Decimal
     mileage: int
     engine: Engine
     carBody: CarBody

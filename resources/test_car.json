@@ -4,12 +4,12 @@
    "price": 120,
    "mileage": 12000,
    "engine": {
-   "type": 1,
+   "type": "DIESEL",
    "power": 210.0
    },
    "carBody": {
-   "color": 1,
-   "type": 1,
+   "color": "BLACK",
+   "type": "",
    "components": [
      "AUTOMATIC TRANSMISSION",
      "LED HEADLIGHTS",

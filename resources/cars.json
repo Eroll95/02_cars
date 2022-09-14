@@ -8,7 +8,83 @@
    "power": 210.0
    },
    "carBody": {
-   "color": "BLACK",
+     "color": "BLACK",
+     "type": "SEDAN",
+     "components": [
+       "AUTOMATIC TRANSMISSION",
+       "LED HEADLIGHTS",
+       "AIR CONDITIONING",
+       "ALLOY WHEELS",
+       "LEATHER SEATS",
+       "BLUETOOTH"
+     ]
+   },
+   "wheel": {
+   "type": "SUMMER",
+   "model": "BRIDGESTONE",
+   "size": 18
+ }
+},
+  {
+   "model": "MAZDA",
+   "price": 170,
+   "mileage": 12000,
+   "engine": {
+   "type": "GASOLINE",
+   "power": 260.0
+   },
+   "carBody": {
+   "color": "BLUE",
+   "type": "HATCHBACK",
+   "components": [
+     "MANUAL TRANSMISSION",
+     "LED HEADLIGHTS",
+     "AIR CONDITIONING",
+     "ALLOY WHEELS",
+     "SPORT PACKAGE"
+   ]
+ },
+   "wheel": {
+   "type": "SUMMER",
+   "model": "BRIDGESTONE",
+   "size": 18
+ }
+},
+   {
+   "model": "BMW",
+   "price": 100,
+   "mileage": 50000,
+   "engine": {
+   "type": "GASOLINE",
+   "power": 280.0
+   },
+   "carBody": {
+   "color": "GREEN",
+   "type": "ESTATE",
+   "components": [
+     "AUTOMATIC TRANSMISSION",
+     "LED HEADLIGHTS",
+     "AIR CONDITIONING",
+     "ALLOY WHEELS",
+     "SPORT PACKAGE"
+   ]
+ },
+   "wheel": {
+   "type": "WINTER",
+   "model": "PIRELLI",
+   "size": 17
+ }
+},
+  {
+   "model": "BMW",
+   "price": 220,
+   "mileage": 10000,
+   "engine": {
+   "type": "GASOLINE",
+   "power": 350.0
+   },
+   "carBody": {
+   "color": "RED",
    "type": "SEDAN",
    "components": [
      "AUTOMATIC TRANSMISSION",
@@ -16,6 +92,7 @@
      "AIR CONDITIONING",
      "ALLOY WHEELS",
      "LEATHER SEATS",
+     "SPORT PACKAGE",
      "BLUETOOTH"
    ]
  },
@@ -43,7 +120,7 @@
    ]
  },
    "wheel": {
-   "type": "SUMMER",
+   "type": "WINTER",
    "model": "BRIDGESTONE",
    "size": 16
  }
