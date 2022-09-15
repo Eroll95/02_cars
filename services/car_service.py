@@ -16,41 +16,33 @@ class CarService:
         return f'{self.cars}'
 
     def get_first_one(self):
-        return self.cars[0].wheel.size
+        return self.cars[0].has_price_between(150, 260)
 
-    def get_cars_sorted_by_selected_criteria(self, criteria: str) -> list['Car']:
-        match criteria:
-            case 'engine power':
-                return sorted([row for row in self.cars], key=lambda x: x.engine['power'], reverse=True)
-            case 'wheel size':
-                return sorted([row for row in self.cars], key=lambda x: x.wheel['size'], reverse=True)
-            case 'components quantity':
-                return sorted([row for row in self.cars], key=lambda x: len(x.carBody['components']), reverse=False)
-
-    def get_cars_sorted_by_selected_criteria_v2(self, sort_type: SortType, reverse: bool) -> list['Car']:
+    def get_cars_sorted_by_selected_criteria(self, sort_type: SortType, reverse: bool) -> list['Car']:
         match sort_type:
             case sort_type.POWER:
-                return sorted([row for row in self.cars], key=lambda x: x.engine['power'], reverse=reverse)
+                return sorted([car for car in self.cars], key=lambda x: x.engine.power, reverse=reverse)
             case sort_type.SIZE:
-                return sorted([row for row in self.cars], key=lambda x: x.wheel['size'], reverse=reverse)
+                return sorted([car for car in self.cars], key=lambda x: x.wheel.size, reverse=reverse)
             case sort_type.COMPONENTS:
-                return sorted([row for row in self.cars], key=lambda x: len(x.carBody['components']), reverse=reverse)
+                return sorted([car for car in self.cars], key=lambda x: len(x.carBody.components), reverse=reverse)
             case _:
                 pass
 
     def get_cars_sorted_by_model_with_selected_car_body(self, car_body: str, min_v: int, max_v: int) -> list['Car']:
         if min_v > max_v:
             raise ValueError('Price range is not valid')
-        return [row for row in self.cars if row.carBody['type'] == car_body and (min_v <= row.price <= max_v)]
+        return [car for car in self.cars if car.carBody.type == car_body and (min_v <= car.price <= max_v)]
 
     def get_cars_sorted_by_model_with_selected_engine(self, engine: str) -> list['Car']:
-        return sorted([row for row in self.cars if row.engine['type'] == engine], key=lambda x: x.engine['power'],
+        return sorted([car for car in self.cars if car.engine.type == engine], key=lambda x: x.engine.power,
                       reverse=True)
 
+    #Można spróbować w klasie Car ogarnąć to
     def get_cars_statistics(self, criteria: str) -> str:
         car_prices = [row.price for row in self.cars]
         car_mileage = [row.mileage for row in self.cars]
-        car_power = [row.engine['power'] for row in self.cars]
+        car_power = [row.engine.power for row in self.cars]
         match criteria:
             case 'price':
                 return f'''
@@ -82,11 +74,11 @@ class CarService:
         return {row.model: row.mileage for row in self.cars}
 
     def get_dict_of_tyre_type(self) -> dict['Car']:
-        l1 = {row.wheel['type']: [c for c in self.cars if c.wheel['type'] == row.wheel['type']]
+        l1 = {row.wheel.type: [c for c in self.cars if c.wheel.type == row.wheel.type]
               for row in self.cars}
         # return l1
         return dict(sorted(l1.items(), key=lambda item: len(item[1]), reverse=True))
 
     def get_cars_with_selected_component(self, component: str) -> list['Car']:
-        return sorted([row for row in self.cars if component in row.carBody['components']], key=lambda x: x.model,
+        return sorted([row for row in self.cars if component in row.carBody.components], key=lambda x: x.model,
                       reverse=False)

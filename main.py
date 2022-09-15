@@ -8,7 +8,7 @@ def main() -> None:
     cs = CarService(cars_filename)
     # print(cs)
     # print(cs.get_cars_sorted_by_selected_criteria('components quantity'))
-    # print(cs.get_cars_sorted_by_selected_criteria_v2(SortType(1), False))
+    # print(cs.get_cars_sorted_by_selected_criteria(SortType.SIZE, False))
     # print(cs.get_cars_sorted_by_model_with_selected_engine('GASOLINE'))
     # print(cs.get_cars_sorted_by_model_with_selected_car_body('SEDAN', 150, 400))
     # print(cs.get_cars_statistics('price'))

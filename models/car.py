@@ -67,3 +67,8 @@ class Car:
     engine: Engine
     carBody: CarBody
     wheel: Wheel
+
+    def has_price_between(self, min_price: int, max_price: int) -> bool:
+        if min_price > max_price:
+            raise ValueError('Minimal price is higher than maximal price')
+        return min_price <= self.price <= max_price

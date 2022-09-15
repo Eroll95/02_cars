@@ -9,11 +9,6 @@ def get_cars(filename: str) -> list['Car']:
         except Exception as e:
             print(e)
 
-        # car = [Car(row['model'], row['price'],
-        #            Engine(row['engine']['type'], row['engine']['power']),
-        #            CarBody(row['carBody']['color'], row['carBody']['type'], row['carBody']['components']),
-        #            Wheel(row['wheel']['type'], row['wheel']['model'], row['wheel']['size'])) for row in json_data]
-
         return [Car(row['model'], row['price'], row['mileage'],
                    Engine(row['engine']['type'], row['engine']['power']),
                    CarBody(row['carBody']['color'], row['carBody']['type'], row['carBody']['components']),
