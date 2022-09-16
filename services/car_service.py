@@ -1,11 +1,9 @@
-import json
 from models.car import Car
 from data_loader.json_loader import get_cars
 from models.validator import validate_car
 from statistics import mean
 from services.types import SortType
 from decimal import Decimal
-import operator
 
 
 class CarService:
@@ -14,9 +12,6 @@ class CarService:
 
     def __str__(self):
         return f'{self.cars}'
-
-    def get_first_one(self):
-        return self.cars[0].has_price_between(150, 260)
 
     def get_cars_sorted_by_selected_criteria(self, sort_type: SortType, reverse: bool) -> list['Car']:
         match sort_type:
@@ -29,20 +24,19 @@ class CarService:
             case _:
                 pass
 
-    def get_cars_sorted_by_model_with_selected_car_body(self, car_body: str, min_v: int, max_v: int) -> list['Car']:
-        if min_v > max_v:
+    def get_cars_sorted_by_model_with_selected_car_body(self, car_body: str, min_price: Decimal, max_price: Decimal) -> list['Car']:
+        if min_price > max_price:
             raise ValueError('Price range is not valid')
-        return [car for car in self.cars if car.carBody.type == car_body and (min_v <= car.price <= max_v)]
+        return [car for car in self.cars if car.carBody.type == car_body and car.has_price_between(min_price, max_price)]
 
     def get_cars_sorted_by_model_with_selected_engine(self, engine: str) -> list['Car']:
-        return sorted([car for car in self.cars if car.engine.type == engine], key=lambda x: x.engine.power,
-                      reverse=True)
+        return sorted([car for car in self.cars if car.engine.type == engine], key=lambda x: x.engine.power, reverse=True)
 
     #Można spróbować w klasie Car ogarnąć to
     def get_cars_statistics(self, criteria: str) -> str:
-        car_prices = [row.price for row in self.cars]
-        car_mileage = [row.mileage for row in self.cars]
-        car_power = [row.engine.power for row in self.cars]
+        car_prices = [car.price for car in self.cars]
+        car_mileage = [car.mileage for car in self.cars]
+        car_power = [car.engine.power for car in self.cars]
         match criteria:
             case 'price':
                 return f'''
@@ -69,16 +63,16 @@ class CarService:
                     Average engine power: {round(mean(car_power), 2)}
                     '''
 
-    #TODO dokonczyc:
+    #TODO if key = car unhashable:
     def get_dict_of_car_mileage(self):
-        return {row.model: row.mileage for row in self.cars}
+        unsorted_dict_of_cars = {car.model: car.mileage for car in self.cars}
+        return dict(sorted(unsorted_dict_of_cars.items(), reverse=True))
 
     def get_dict_of_tyre_type(self) -> dict['Car']:
-        l1 = {row.wheel.type: [c for c in self.cars if c.wheel.type == row.wheel.type]
-              for row in self.cars}
-        # return l1
-        return dict(sorted(l1.items(), key=lambda item: len(item[1]), reverse=True))
+        unsorted_dict_of_tyres = {tyre.wheel.type: [car for car in self.cars if car.wheel.type == tyre.wheel.type] for tyre in self.cars}
+        return dict(sorted(unsorted_dict_of_tyres.items(), key=lambda item: len(item[1]), reverse=True))
 
     def get_cars_with_selected_component(self, component: str) -> list['Car']:
-        return sorted([row for row in self.cars if component in row.carBody.components], key=lambda x: x.model,
-                      reverse=False)
+        if not isinstance(component, str):
+            raise ValueError('Passed value is not a string')
+        return sorted([car for car in self.cars if car.has_component(component)], key=lambda x: x.model, reverse=False)
