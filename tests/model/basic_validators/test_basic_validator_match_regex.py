@@ -1,5 +1,5 @@
 import unittest
-from app.model import matches_regex
+from app.validator.validator import matches_regex
 
 
 class BasicValidatorMatchRegex(unittest.TestCase):

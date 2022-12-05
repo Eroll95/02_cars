@@ -1,7 +1,7 @@
 import unittest
 import pytest
 import os
-from app.data_loader import get_cars
+from app.data_loader.json_loader import get_cars
 from typing import Final
 
 cars_filename_path: Final[str] = r'C:\Dev\kmprograms\praktyka\praktyka - python\09_OBIEKTY\02_cars\resources\cars.json'

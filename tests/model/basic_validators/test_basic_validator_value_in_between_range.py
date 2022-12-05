@@ -1,5 +1,5 @@
 import unittest
-from app.model import value_in_between_range
+from app.validator.basic_validator import value_in_between_range
 from typing import Final
 
 MIN_VALUE: Final[int] = 0

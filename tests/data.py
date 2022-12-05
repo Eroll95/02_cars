@@ -1,4 +1,4 @@
-from app.model import Car, CarBody, CarBodyType, CarBodyColor, Engine, EngineType, Wheel, TyreType
+from app.model.car import Car, CarBody, CarBodyType, CarBodyColor, Engine, EngineType, Wheel, TyreType
 from decimal import Decimal
 
 

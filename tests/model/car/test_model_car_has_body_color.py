@@ -1,6 +1,6 @@
 import unittest
 from tests.data import CAR_1
-from app.model import CarBodyColor
+from app.model.car import CarBodyColor
 
 body_colors = [color for color in CarBodyColor]
 
