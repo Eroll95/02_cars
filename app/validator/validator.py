@@ -1,4 +1,4 @@
-from basic_validator import matches_regex, value_in_between_range
+from app.validator.basic_validator import matches_regex, value_in_between_range
 from app.model.car import *
 from decimal import Decimal
 from dataclasses import dataclass
@@ -80,11 +80,11 @@ def validate_wheel_type(wheel: Wheel) -> bool:
     return matches_regex(r'^[A-Z]+$', wheel.type.name)
 
 
-def validate_model(self, wheel: Wheel) -> bool:
+def validate_model(wheel: Wheel) -> bool:
     return matches_regex(r'^[A-Z]+$', wheel.model)
 
 
-def validate_size(self, wheel: Wheel) -> bool:
+def validate_size(wheel: Wheel) -> bool:
     return isinstance(wheel.size, int) and wheel.size > 0
 
 
