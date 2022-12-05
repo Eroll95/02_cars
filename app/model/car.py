@@ -51,7 +51,7 @@ class Engine:
 
     # TODO wydzielic validatory z polami składowymi
     def has_power_between(self, min_power: float, max_power: float) -> bool:
-        return value_in_between_range(min_power, max_power, self.power)
+        return min_power < self.power < max_power
 
     @classmethod
     def of(cls, data: dict[str, Any]) -> 'Engine':
@@ -109,10 +109,10 @@ class Car:
     wheel: Wheel
 
     def has_mileage_between(self, min_mileage: int, max_mileage: int) -> bool:
-        return value_in_between_range(min_mileage, max_mileage, self.mileage)
+        return min_mileage < self.mileage < max_mileage
 
     def has_price_between(self, min_price: Decimal, max_price: Decimal) -> bool:
-        return value_in_between_range(min_price, max_price, self.price)
+        return min_price < self.price < max_price
 
     def has_component(self, component: str) -> bool:
         return component in self.car_body.components
