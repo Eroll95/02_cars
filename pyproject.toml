@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "02-cars"
+version = "0.1.0"
+description = ""
+authors = ["Eroll95 <karkow19@gmail.com>"]
+readme = "README.md"
+packages = [{include = "02_cars"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
