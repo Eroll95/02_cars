@@ -1,2 +1,8 @@
 ---Known issues and TODOs---
+
+TODO - walidacja na poziomie dict nie na poziomie obiektu
+TODO - podzielić walidatory na klasy
+
+
+
 Rewrite all validator tests when dataloader changes

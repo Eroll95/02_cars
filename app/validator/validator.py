@@ -90,18 +90,25 @@ def validate_size(wheel: Wheel) -> bool:
 
 # Validate Wheel--------------------------------------------------------
 
-# @dataclass
-# class ValidateWheelData:
-#
-#     data: dict[str, Any]
+@dataclass
+class ValidateWheelData:
 
-    # def validate(self) -> bool:
-    #     return validate_wheel_type(wheel) and validate_model(wheel) and validate_size(wheel)
+    # data: dict[str, Any]
+    def __init__(self, data: list[str, Any]):
+        self.data = data
+
+    def __str__(self):
+        return f'{self.data}'
+
+    def validate_wheel_new(self) -> bool:
+        return True
+        # return validate_wheel_type_new() # and validate_model(wheel) and validate_size(wheel)
 
 
-    # def validate_wheel_type(self, wheel: Wheel) -> bool:
-    #     return matches_regex(r'^[A-Z]+$', wheel.type.name)
-    #
+    # def validate_wheel_type_new(self) -> bool:
+    #     pass
+        # return matches_regex(r'^[A-Z]+$', )
+
     # def validate_model(self, wheel: Wheel) -> bool:
     #     return matches_regex(r'^[A-Z]+$', wheel.model)
     #
