@@ -1,6 +1,7 @@
 from app.model.car import Car
 # from app.validator.validator import validate_car
-from app.validator.validator import ValidateWheelData as VWD
+from app.validator.validator import ValidateWheelData
+from app.validator.validator import ValidateBasicData
 import json
 from typing import Final, Any
 
@@ -27,8 +28,9 @@ def get_cars(filename: str) -> list[dict[str, Any]]:
             json_data = json.load(json_file)
             cars = []
             for data in json_data:
-                car = VWD(data)
-                if VWD.validate_wheel(car):
+                car = ValidateWheelData(data)
+                if ValidateWheelData.validate_wheel(car):
+                    ValidateBasicData.validate_basic_data(data)
                     car = Car.of(data)
                     cars.append(car)
             return cars
