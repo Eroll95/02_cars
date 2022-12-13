@@ -87,12 +87,30 @@ MILEAGE_MAX: Final[int] = 1000000
 # def validate_size(wheel: Wheel) -> bool:
 #     return isinstance(wheel.size, int) and wheel.size > 0
 
+# Validate Basic Info--------------------------------------------------------
+
+class ValidateBasicData:
+    def __init__(self, data: dict[str, Any]):
+        self.data = data
+# def validate_basic_data(car: Car) -> bool:
+#     return validate_name(car) and validate_price(car) and validate_mileage(car)
+#
+#
+# def validate_name(car: Car) -> bool:
+#     return matches_regex(r'^[A-Z]+$', car.model)
+#
+#
+# def validate_price(car: Car) -> bool:
+#     return isinstance(car.price, Decimal) and value_in_between_range(0, PRICE_MAX, car.price)
+#
+#
+# def validate_mileage(car: Car) -> bool:
+#     return isinstance(car.mileage, int) and value_in_between_range(0, MILEAGE_MAX, car.mileage)
 
 # Validate Wheel--------------------------------------------------------
 
-class ValidateWheelData:
 
-    # data: dict[str, Any]
+class ValidateWheelData:
     def __init__(self, data: dict[str, Any]):
         self.data = data
 
