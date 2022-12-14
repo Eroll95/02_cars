@@ -22,15 +22,14 @@ from typing import Final, Any
 #             raise ValueError(e)
 
 
-def get_cars(filename: str) -> list[dict[str, Any]]:
+def get_cars(filename: str) -> [dict[str, Any]]:
     with open(filename, 'r') as json_file:
         try:
             json_data = json.load(json_file)
             cars = []
             for data in json_data:
                 car = ValidateWheelData(data)
-                if ValidateWheelData.validate_wheel(car):
-                    ValidateBasicData.validate_basic_data(data)
+                if car.validate_wheel():
                     car = Car.of(data)
                     cars.append(car)
             return cars
