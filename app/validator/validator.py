@@ -18,16 +18,13 @@ class ValidateBasicData:
     data: dict[str, Any]
 
     def validate_basic_data(self) -> bool:
-        try:
-            return self.validate_name() and self.validate_price() and self.validate_mileage()
-        except Exception as e:
-            raise ValueError(e)
+        return self.validate_name() and self.validate_price() and self.validate_mileage()
 
     def validate_name(self) -> bool:
         return matches_regex(r'^[A-Z]+$', self.data['model'])
 
     def validate_price(self) -> bool:
-        return isinstance(self.data['price'], Decimal) and value_in_between_range(0, PRICE_MAX, self.data['price'])
+        return isinstance(self.data['price'], int) and value_in_between_range(0, PRICE_MAX, self.data['price'])
 
     def validate_mileage(self) -> bool:
         return isinstance(self.data['mileage'], int) and value_in_between_range(0, MILEAGE_MAX, self.data['mileage'])

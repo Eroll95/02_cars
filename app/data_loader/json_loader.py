@@ -27,7 +27,6 @@ def get_cars(filename: str) -> [dict[str, Any]]:
             json_data = json.load(json_file)
             cars = []
             for data in json_data:
-                print(data)
                 car_basic_info = ValidateBasicData(data)
                 car_engine_info = ValidateEngineData(data)
                 car_body_info = ValidateCarBodyData(data)

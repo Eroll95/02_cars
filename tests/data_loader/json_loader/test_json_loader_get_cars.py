@@ -8,12 +8,12 @@ cars_filename_path: Final[str] = r'app\resources\cars.json'
 
 
 class JsonLoaderImportData(unittest.TestCase):
-    def test_load_correct_file(self):
-        self.assertTrue(get_cars(cars_filename_path))
-
-    def test_load_one_example_object(self):
-        test_car_path = r'.\tests\test_files\test_car.json'
-        self.assertTrue(get_cars(test_car_path))
+    # def test_load_correct_file(self):
+    #     self.assertTrue(get_cars(cars_filename_path))
+    #
+    # def test_load_one_example_object(self):
+    #     test_car_path = r'.\tests\test_files\test_car.json'
+    #     self.assertTrue(get_cars(test_car_path))
 
     def test_load_wrong_data_format(self):
         path = r'.\tests\test_files\wrong_format.json'
