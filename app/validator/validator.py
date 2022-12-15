@@ -18,7 +18,10 @@ class ValidateBasicData:
     data: dict[str, Any]
 
     def validate_basic_data(self) -> bool:
-        return self.validate_name() and self.validate_price() and self.validate_mileage()
+        try:
+            return self.validate_name() and self.validate_price() and self.validate_mileage()
+        except Exception as e:
+            raise ValueError(e)
 
     def validate_name(self) -> bool:
         return matches_regex(r'^[A-Z]+$', self.data['model'])

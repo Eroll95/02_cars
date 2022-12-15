@@ -1,7 +1,6 @@
 from app.model.car import Car
 # from app.validator.validator import validate_car
-from app.validator.validator import ValidateWheelData
-from app.validator.validator import ValidateBasicData
+from app.validator.validator import ValidateBasicData, ValidateWheelData, ValidateCarBodyData, ValidateEngineData
 import json
 from typing import Final, Any
 
@@ -28,8 +27,12 @@ def get_cars(filename: str) -> [dict[str, Any]]:
             json_data = json.load(json_file)
             cars = []
             for data in json_data:
-                car = ValidateWheelData(data)
-                if car.validate_wheel():
+                print(data)
+                car_basic_info = ValidateBasicData(data)
+                car_engine_info = ValidateEngineData(data)
+                car_body_info = ValidateCarBodyData(data)
+                car_wheel_info = ValidateWheelData(data)
+                if car_basic_info.validate_basic_data():
                     car = Car.of(data)
                     cars.append(car)
             return cars
@@ -41,5 +44,5 @@ if __name__ == '__main__':
     cars_staging_filename_path: Final[str] = r'.\..\resources\cars.json'
     cars_dev_testfile_path: Final[str] = r'.\..\..\tests\test_files\test_car.json'
     car1 = get_cars(cars_dev_testfile_path)
+    print(car1)
 
-    print(type(car1[0]))
