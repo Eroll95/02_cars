@@ -30,6 +30,20 @@ class ValidateBasicData:
 
 
 @dataclass
+class ValidateEngineData:
+    data: dict[str, Any]
+
+    def validate_engine(self) -> bool:
+        return validate_engine_type() and validate_engine_power()
+
+    def validate_engine_type(self) -> bool:
+        return matches_regex(r'^[A-Z]+$', self.data['engine']['type'])
+
+    def validate_engine_power(self) -> bool:
+        return isinstance(self.data['engine']['power'], float) and value_in_between_range(0, 10000, self.data['engine']['power'])
+
+
+@dataclass
 class ValidateWheelData:
     data: dict[str, Any]
 
