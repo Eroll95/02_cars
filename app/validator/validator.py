@@ -9,9 +9,6 @@ from collections import Counter
 PRICE_MAX: Final[Decimal] = Decimal('1000000')
 MILEAGE_MAX: Final[int] = 1000000
 
-# TODO - walidacja na poziomie dict nie na poziomie obiektu
-# TODO - podzielić walidatory na klasy
-
 
 @dataclass
 class ValidateBasicData:

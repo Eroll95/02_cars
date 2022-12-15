@@ -1,8 +1,7 @@
 ---Known issues and TODOs---
 
-TODO - walidacja na poziomie dict nie na poziomie obiektu
-TODO - podzielić walidatory na klasy
+TODO - Rewrite test for validators
+TODO - Make more tests for validators
 
-
-
+Main objective:
 Rewrite all validator tests when dataloader changes

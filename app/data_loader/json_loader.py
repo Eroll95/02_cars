@@ -4,22 +4,6 @@ from app.validator.validator import ValidateBasicData, ValidateWheelData, Valida
 import json
 from typing import Final, Any
 
-# LEGACY - for validating object models instead of dict from json
-
-
-# def get_cars_legacy(filename: str) -> list['Car']:
-#     with open(filename, 'r') as json_file:
-#         try:
-#             json_data = json.load(json_file)
-#             cars = []
-#             for data in json_data:
-#                 car = Car.of(data)
-#                 if validate_car(car):
-#                     cars.append(car)
-#             return cars
-#         except Exception as e:
-#             raise ValueError(e)
-
 
 def get_cars(filename: str) -> [dict[str, Any]]:
     with open(filename, 'r') as json_file:
