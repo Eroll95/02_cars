@@ -3,6 +3,7 @@ from app.model.car import *
 from decimal import Decimal
 from dataclasses import dataclass
 from typing import Final, Any
+from collections import Counter
 
 
 PRICE_MAX: Final[Decimal] = Decimal('1000000')
@@ -34,13 +35,34 @@ class ValidateEngineData:
     data: dict[str, Any]
 
     def validate_engine(self) -> bool:
-        return validate_engine_type() and validate_engine_power()
+        return self.validate_engine_type() and self.validate_engine_power()
 
     def validate_engine_type(self) -> bool:
         return matches_regex(r'^[A-Z]+$', self.data['engine']['type'])
 
     def validate_engine_power(self) -> bool:
         return isinstance(self.data['engine']['power'], float) and value_in_between_range(0, 10000, self.data['engine']['power'])
+
+
+@dataclass
+class ValidateCarBodyData:
+    data: dict[str, Any]
+
+    def validate_car_body(self) -> bool:
+        return self.validate_color() and self.validate_body_type() and self.validate_components()
+
+    def validate_color(self) -> bool:
+        return matches_regex(r'^[A-Z]+$', self.data['car_body']['color'])
+
+    def validate_body_type(self) -> bool:
+        return matches_regex(r'^[A-Z]+$', self.data['car_body']['type'])
+
+    def validate_components(self) -> bool:
+        if False in [item.isupper() for item in self.data['car_body']['components']]:
+            return False
+        if len([item for item, count in Counter(self.data['car_body']['components']).items() if count > 1]) > 0:
+            return False
+        return True
 
 
 @dataclass
@@ -58,3 +80,4 @@ class ValidateWheelData:
 
     def validate_size(self) -> bool:
         return isinstance(self.data['wheel']['size'], int) and self.data['wheel']['size'] > 0
+
