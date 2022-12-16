@@ -24,8 +24,8 @@ def get_cars(filename: str) -> [dict[str, Any]]:
 
 
 if __name__ == '__main__':
-    cars_staging_filename_path: Final[str] = r'.\..\resources\cars.json'
-    cars_dev_testfile_path: Final[str] = r'.\..\..\tests\test_files\test_car.json'
-    car1 = get_cars(cars_dev_testfile_path)
+    cars_main_filename_path: Final[str] = r'.\..\resources\cars.json'
+    cars_testfile_path: Final[str] = r'.\..\..\tests\test_files\test_car.json'
+    car1 = get_cars(cars_main_filename_path)
     print(car1)
 
