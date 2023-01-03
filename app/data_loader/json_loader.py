@@ -15,7 +15,11 @@ def get_cars(filename: str) -> [dict[str, Any]]:
                 car_engine_info = ValidateEngineData(data)
                 car_body_info = ValidateCarBodyData(data)
                 car_wheel_info = ValidateWheelData(data)
-                if car_basic_info.validate_basic_data():
+
+                if car_basic_info.validate_basic_data() and \
+                   car_engine_info.validate_engine() and \
+                   car_body_info.validate_car_body() and \
+                   car_wheel_info.validate_wheel():
                     car = Car.of(data)
                     cars.append(car)
             return cars
@@ -26,6 +30,6 @@ def get_cars(filename: str) -> [dict[str, Any]]:
 if __name__ == '__main__':
     cars_main_filename_path: Final[str] = r'.\..\resources\cars.json'
     cars_testfile_path: Final[str] = r'.\..\..\tests\test_files\test_car.json'
-    car1 = get_cars(cars_main_filename_path)
+    car1 = get_cars(cars_testfile_path)
     print(car1)
 
