@@ -27,5 +27,3 @@ def main() -> None:
 if __name__ == '__main__':
     is_value_of(TyreType, 'test')
     # main()
-
-# TODO uporządkować paczki
