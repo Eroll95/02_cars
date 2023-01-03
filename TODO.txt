@@ -1,6 +1,5 @@
 ---Known issues and TODOs---
 
-TODO - get_cars not finished
 TODO - Rewrite test for validators
 TODO - Make more tests for validators
 TODO - is_value_of in basic validator

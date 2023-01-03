@@ -1,5 +1,5 @@
 import unittest
-from tests.data import CAR_1
+from tests.data.data import CAR_1
 
 
 class CarModelHasPowerBetween(unittest.TestCase):

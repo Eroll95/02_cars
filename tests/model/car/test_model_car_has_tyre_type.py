@@ -1,5 +1,5 @@
 import unittest
-from tests.data import CAR_1
+from tests.data.data import CAR_1
 from app.model.car import TyreType
 
 tyre_types = [tyre for tyre in TyreType]

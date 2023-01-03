@@ -1,7 +1,4 @@
-import unittest
 # from app.validator.validator import validate_name, validate_price, validate_mileage
-from tests.data import CAR_1, CAR_2, CAR_3, CAR_4
-
 
 
 # -----------LEGACY CODE

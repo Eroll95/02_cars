@@ -1,6 +1,6 @@
 import unittest
 from decimal import Decimal
-from tests.data import CAR_1
+from tests.data.data import CAR_1
 
 
 class CarModelHasPriceBetween(unittest.TestCase):
