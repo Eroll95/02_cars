@@ -1,5 +1,5 @@
 import unittest
-from tests.data.data import CAR_1
+from tests.data.car_obj_data import CAR_1
 from app.model.car import EngineType
 
 engine_types = [engine for engine in EngineType]

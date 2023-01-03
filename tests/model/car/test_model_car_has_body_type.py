@@ -1,5 +1,5 @@
 import unittest
-from tests.data.data import CAR_1
+from tests.data.car_obj_data import CAR_1
 from app.model.car import CarBodyType
 
 body_types = [body_type for body_type in CarBodyType]

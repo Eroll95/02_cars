@@ -1,6 +1,6 @@
 import unittest
 from app.validator.validator import ValidateBasicData
-from tests.data.data import CAR_1
+from tests.data.car_obj_data import CAR_1
 
 
 class ValidatorValidateEnginData(unittest.TestCase):

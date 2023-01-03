@@ -1,5 +1,5 @@
 import unittest
-from tests.data.data import CAR_1
+from tests.data.car_obj_data import CAR_1
 
 
 class CarModelHasMileageBetween(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from tests.data.data import BASIC_INFO_1, WHEEL_INFO_1, CAR_1
+from tests.data.validator_obj_data import BASIC_INFO_1, WHEEL_INFO_1
 from app.validator.validator import ValidateWheelData, ValidateBasicData
 
 
@@ -7,7 +7,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_object_has_correct_wheel_type(self):
         self.assertTrue(ValidateWheelData.validate_wheel(WHEEL_INFO_1))
-        # self.assertTrue(ValidateWheelData.validate_wheel(CAR_1))
 
     def test_object_has_correct_name(self):
         self.assertTrue(ValidateBasicData.validate_name(BASIC_INFO_1))

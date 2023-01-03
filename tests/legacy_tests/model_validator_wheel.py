@@ -1,6 +1,6 @@
 import unittest
 from app.validator.validator import validate_wheel_type, validate_model, validate_size
-from tests.data.data import CAR_1, CAR_2, CAR_3, CAR_4
+from tests.data.car_obj_data import CAR_1, CAR_2, CAR_3, CAR_4
 
 
 class ValidatorValidateCarWheelData(unittest.TestCase):
