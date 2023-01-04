@@ -1,4 +1,4 @@
-from app.validator.basic_validator import matches_regex, value_in_between_range
+from app.validator.basic_validator import matches_regex, value_in_between_range, is_value_of
 from app.model.car import *
 from decimal import Decimal
 from dataclasses import dataclass
@@ -35,7 +35,7 @@ class ValidateEngineData:
         return self.validate_engine_type() and self.validate_engine_power()
 
     def validate_engine_type(self) -> bool:
-        return matches_regex(r'^[A-Z]+$', self.data['engine']['type'])
+        return matches_regex(r'^[A-Z]+$', self.data['engine']['type']) and is_value_of(EngineType, self.data['engine']['type'])
 
     def validate_engine_power(self) -> bool:
         return isinstance(self.data['engine']['power'], float) and value_in_between_range(0, 10000, self.data['engine']['power'])
@@ -49,10 +49,10 @@ class ValidateCarBodyData:
         return self.validate_color() and self.validate_body_type() and self.validate_components()
 
     def validate_color(self) -> bool:
-        return matches_regex(r'^[A-Z]+$', self.data['car_body']['color'])
+        return matches_regex(r'^[A-Z]+$', self.data['car_body']['color']) and is_value_of(CarBodyColor, self.data['car_body']['color'])
 
     def validate_body_type(self) -> bool:
-        return matches_regex(r'^[A-Z]+$', self.data['car_body']['type'])
+        return matches_regex(r'^[A-Z]+$', self.data['car_body']['type']) and is_value_of(CarBodyType, self.data['car_body']['type'])
 
     def validate_components(self) -> bool:
         if False in [item.isupper() for item in self.data['car_body']['components']]:
@@ -70,10 +70,10 @@ class ValidateWheelData:
         return self.validate_type() and self.validate_model() and self.validate_size()
 
     def validate_type(self) -> bool:
-        return matches_regex(r'^[A-Z]+$', self.data['wheel']['type'])
+        return matches_regex(r'^[A-Z]+$', self.data['wheel']['type']) and is_value_of(TyreType, self.data['wheel']['type'])
 
     def validate_model(self) -> bool:
-        return matches_regex(r'^[A-Z]+$', self.data['wheel']['model'])
+        return matches_regex(r'^[A-Z]+$', self.data['wheel']['model']) and is_value_of(TyreModel, self.data['wheel']['model'])
 
     def validate_size(self) -> bool:
         return isinstance(self.data['wheel']['size'], int) and self.data['wheel']['size'] > 0

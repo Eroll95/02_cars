@@ -1,7 +1,7 @@
 ---Known issues and TODOs---
 
 TODO - Make more tests for validators
-TODO - is_value_of in basic validator
+
 
 Main objective:
-is_value_of
+Make tests for is_value_of method

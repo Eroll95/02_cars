@@ -12,12 +12,6 @@ class EngineType(Enum):
 
 
 @unique
-class TyreType(Enum):
-    WINTER = 1
-    SUMMER = 2
-
-
-@unique
 class CarBodyColor(Enum):
     BLACK = 1
     SILVER = 2
@@ -40,6 +34,13 @@ class TyreType(Enum):
     SUMMER = 2
 
 
+@unique
+class TyreModel(Enum):
+    BRIDGESTONE = 1
+    PIRELLI = 2
+    CONTINENTAL = 3
+
+
 @dataclass(frozen=True)
 class Engine:
     type: EngineType
@@ -48,7 +49,6 @@ class Engine:
     def has_engine_type(self, car_engine_type: EngineType):
         return self.type == car_engine_type
 
-    # TODO wydzielic validatory z polami składowymi
     def has_power_between(self, min_power: float, max_power: float) -> bool:
         return min_power < self.power < max_power
 
