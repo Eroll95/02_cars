@@ -1,8 +1,7 @@
 ---Known issues and TODOs---
 
-TODO - Rewrite test for validators
 TODO - Make more tests for validators
 TODO - is_value_of in basic validator
 
 Main objective:
-Rewrite all validator tests when dataloader changes
+is_value_of

@@ -16,10 +16,11 @@ def value_in_between_range(min_range: int | Decimal | float,
     raise ValueError('Min value is greater than max value')
 
 
-def is_value_of(enum_type: Enum, value: str) -> bool:
-    [print(e) for e in enum_type.list()]
-    return True
+def is_value_of(class_type: [Enum], value: str) -> bool:
+    return value in [str(enm.name) for enm in class_type]
 
 
 if __name__ == '__main__':
-    is_value_of(TyreType, 'test')
+    if is_value_of(TyreType, 'WINTER'):
+        print('Yes')
+

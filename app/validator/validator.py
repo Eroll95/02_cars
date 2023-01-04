@@ -77,4 +77,3 @@ class ValidateWheelData:
 
     def validate_size(self) -> bool:
         return isinstance(self.data['wheel']['size'], int) and self.data['wheel']['size'] > 0
-
