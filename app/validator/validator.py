@@ -67,9 +67,9 @@ class ValidateWheelData:
     data: dict[str, Any]
 
     def validate_wheel(self) -> bool:
-        return self.validate_wheel_type() and self.validate_model() and self.validate_size()
+        return self.validate_type() and self.validate_model() and self.validate_size()
 
-    def validate_wheel_type(self) -> bool:
+    def validate_type(self) -> bool:
         return matches_regex(r'^[A-Z]+$', self.data['wheel']['type'])
 
     def validate_model(self) -> bool:
