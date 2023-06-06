@@ -3,6 +3,7 @@ from typing import Final
 from data_loader.json_loader import get_cars
 from app.model.car import TyreType
 from app.validator.basic_validator import is_value_of
+# from app.persistance.database import print_obj
 
 
 def main() -> None:
@@ -25,5 +26,5 @@ def main() -> None:
 
 
 if __name__ == '__main__':
-    is_value_of(TyreType, 'test')
-    # main()
+    # is_value_of(TyreType, 'test')
+    main()

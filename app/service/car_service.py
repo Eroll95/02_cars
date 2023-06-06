@@ -31,7 +31,7 @@ class CarService:
     def get_cars_sorted_by_model_with_selected_engine(self, engine: str) -> list[Car]:
         return sorted([car for car in self.cars if car.engine.type == engine], key=lambda x: x.engine.power, reverse=True)
 
-    #TODO Statystyki
+
     def _get_price_statistics(self) -> Statistics:
         car_prices = [car.price for car in self.cars]
         return Statistics(
@@ -39,8 +39,6 @@ class CarService:
             mean(car_prices),
             max(car_prices)
         )
-
-
 
     def _get_mileage_statistics(self) -> Statistics:
         car_mileage = [car.mileage for car in self.cars]

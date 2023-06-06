@@ -1,7 +1,16 @@
 ---Known issues and TODOs---
+'''
+Baza danych to MySQL która jest obrazem uruchomionym w dockerze. Plik docker-compose.yml znajduje się w głównym katalogu projektu.
+Credentials do bazy danych znajdują się w pliku .env w głównym katalogu projektu oraz w pliku db_config.json w folderze persistance.
+'''
+TODO:
+1. MUST HAVE - Make validators work again - Done I guess
+2. Make connection with builder pattern
+3. Rewrite ORM to SQL Alchemy 2.0 or Alembic
+4. Add a frondend to the project - React
+5. Add a server to the project - Flask
+6. Make a REST API for communication between frontend and backend
+7. Make GraphQL API for communication between frontend and backend
 
-TODO - Make more tests for validators
-
-
-Main objective:
-Make tests for is_value_of method
+Order:
+1, 4

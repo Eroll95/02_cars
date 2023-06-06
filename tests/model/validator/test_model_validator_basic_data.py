@@ -6,7 +6,7 @@ from app.validator.validator import ValidateBasicData
 
 class ValidatorValidateBasicData(unittest.TestCase):
 
-    # TESTS Name
+    # TESTS Name---------------------------------------------------------
 
     def test_object_has_correct_name(self):
         self.assertTrue(ValidateBasicData.validate_name(BASIC_INFO_1))
@@ -17,7 +17,7 @@ class ValidatorValidateBasicData(unittest.TestCase):
     def test_object_has_incorrect_name_contains_numbers(self):
         self.assertFalse(ValidateBasicData.validate_name(BASIC_INFO_3))
 
-    # TESTS Price
+    # TESTS Price---------------------------------------------------------
 
     def test_object_has_correct_price(self):
         self.assertTrue(ValidateBasicData.validate_price(BASIC_INFO_1))
@@ -31,7 +31,7 @@ class ValidatorValidateBasicData(unittest.TestCase):
     def test_object_has_incorrect_price_contains_negative_decimal(self):
         self.assertFalse(ValidateBasicData.validate_price(BASIC_INFO_4))
 
-    # TESTS Mileage
+    # TESTS Mileage---------------------------------------------------------
 
     def test_object_has_correct_mileage(self):
         self.assertTrue(ValidateBasicData.validate_mileage(BASIC_INFO_1))

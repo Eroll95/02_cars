@@ -7,7 +7,7 @@ BODY_INFO_1 = ValidateCarBodyData({'car_body': {'color': 'BLACK', 'type': 'SEDAN
 WHEEL_INFO_1 = ValidateWheelData({'wheel': {'type': 'SUMMER', 'model': 'BRIDGESTONE', 'size': 18}})
 
 BASIC_INFO_2 = ValidateBasicData({'model': 'ALFA ROMEO', 'price': 200.0, 'mileage': '2000'})
-ENGINE_INFO_2 = ValidateEngineData({'engine': {'type': 'HYBR1D', 'power': 150}})
+ENGINE_INFO_2 = ValidateEngineData({'engine': {'type': 'HYBRID', 'power': 150}})
 BODY_INFO_2 = ValidateCarBodyData({'car_body': {'color': 'black', 'type': 'sedan', 'components': ['LED HEADLIGHTS', 'led']}})
 WHEEL_INFO_2 = ValidateWheelData({'wheel': {'type': 'summer', 'model': 'pirelli', 'size': -18}})
 

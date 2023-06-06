@@ -19,7 +19,7 @@ class ValidatorValidateCarBodyData(unittest.TestCase):
     def test_object_has_incorrect_body_type_contains_lower_chars(self):
         self.assertFalse(ValidateCarBodyData.validate_color(BODY_INFO_2))
 
-        # Validate Component list--------------------------------------------------------
+    # Validate Component list--------------------------------------------------------
 
     def test_object_has_correct_components(self):
         self.assertTrue(ValidateCarBodyData.validate_components(BODY_INFO_1))

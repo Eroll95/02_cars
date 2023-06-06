@@ -12,9 +12,6 @@ logging.basicConfig(level=logging.INFO)
 PRICE_MAX: Final[Decimal] = Decimal('1000000')
 MILEAGE_MAX: Final[int] = 1000000
 
-# TODO - walidacja na poziomie dict nie na poziomie obiektu
-# TODO - podzielić walidatory na klasy
-
 
 def validate_car(car: Car) -> bool:
     return validate_basic_data(car) and validate_engine(car.engine) and validate_car_body(car.car_body) and validate_wheel(car.wheel)

@@ -6,7 +6,7 @@ from app.validator.validator import ValidateWheelData
 
 class ValidatorValidateCarWheelData(unittest.TestCase):
 
-    # TEST Wheel type
+    # TEST Wheel type---------------------------------------------------------
 
     def test_object_has_correct_wheel_type(self):
         self.assertTrue(ValidateWheelData.validate_type(WHEEL_INFO_1))
@@ -20,7 +20,7 @@ class ValidatorValidateCarWheelData(unittest.TestCase):
     def test_object_has_incorrect_wheel_type_contains_invalid_chars(self):
         self.assertFalse(ValidateWheelData.validate_model(WHEEL_INFO_4))
 
-    # TEST Wheel Name
+    # TEST Wheel Name---------------------------------------------------------
 
     def test_object_has_correct_wheel_name(self):
         self.assertTrue(ValidateWheelData.validate_model(WHEEL_INFO_1))
@@ -34,7 +34,7 @@ class ValidatorValidateCarWheelData(unittest.TestCase):
     def test_object_has_incorrect_wheel_model_name_contains_invalid_chars(self):
         self.assertFalse(ValidateWheelData.validate_model(WHEEL_INFO_4))
 
-    # TEST Wheel size
+    # TEST Wheel size---------------------------------------------------------
 
     def test_object_has_correct_wheel_size(self):
         self.assertTrue(ValidateWheelData.validate_size(WHEEL_INFO_1))

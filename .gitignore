@@ -1,2 +1,4 @@
 .idea
 /app/resources/02_SAMOCHODY.pdf
+.env
+Pipfile
