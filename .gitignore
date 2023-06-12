@@ -2,3 +2,4 @@
 .env
 Pipfile
 /app/resources/02_SAMOCHODY.pdf
+/frontend/node_modules

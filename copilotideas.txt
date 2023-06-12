@@ -1,0 +1,427 @@
+Synthesizing 10/10 solutions
+
+=======
+Suggestion 1
+
+// Add some easy styling to the page. 
+// Add a button that sorts the cars by price in ascending order. 
+// Add a button that sorts the cars by price in descending order. 
+// Add a button that shows only the cars that are made in 2020. 
+// Add a button that shows only the cars that are made in 2019. 
+// Add a button that shows all the cars again. 
+// Add a button that shows the average price of the cars. 
+// Add a button that shows the average price of the cars made in 2020. 
+// Add a button that shows the average price of the cars made in 2019. 
+// Add a button that shows the average price of the cars made in 2018. 
+// Add a button that shows the average price of the cars made in 2017. 
+// Add a button that shows the average price of the cars made in 2016. 
+// Add a button that shows the average price of the cars made in 2015. 
+// Add a button that shows the average price of the cars made in 2014. 
+// Add a button that shows the average price of the cars made in 2013. 
+// Add a button that shows the average price of the cars made in 2012. 
+// Add a button that shows the average price of the cars made in 2011. 
+// Add a button that shows the average price of the cars made in 2010. 
+// Add a button that shows the average price of the cars made in 2009. 
+// Add a button that shows the average price of the cars made in 2008. 
+// Add a button that shows the average price of the cars made in 2007. 
+// Add a button that shows the average price of the cars made in 2006. 
+// Add a button that shows the average price of the cars made in 2005. 
+// Add a button that shows the average price of the cars made in 2004. 
+// Add a button that shows the average price of the cars made in 2003. 
+// Add a button that shows the average price of the cars made in 2002. 
+// Add a button that shows the average price of the cars made in 2001. 
+// Add a button that shows the average price of the cars made in 2000. 
+// Add a button that shows the
+
+=======
+Suggestion 2
+
+// Add some easy styling to the page. 
+
+// Path: frontend\src\App.js
+import React, { useState, useEffect } from 'react';
+import Car from './components/Car';
+import axios from 'axios';
+import './App.css';
+
+function App() {
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/cars')
+      .then(res => setCars(res.data))
+      .catch(err => console.log(err))
+  }, []);
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Car List</h1>
+        {cars.map(car => <Car key={car.id} car={car} />)}
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+// Path: frontend\src\components\Car.js
+import React from 'react';
+import './Car.css';
+
+const Car = ({ car }) => {
+  return (
+    <div className="car-container">
+      <h2>{car.make} {car.model}</h2>
+      <p>Year: {car.year}</p>
+      <p>Price: {car.price}</p>
+      <p>Color: {car.color}</p>
+      <p>Country: {car.country}</p>
+    </div>
+  );
+}
+
+export default Car;
+
+// Path: frontend\src\App.css
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.car-container {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  background-color: #61dafb;
+}
+
+// Path: frontend\src\index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import './index.css';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+=======
+Suggestion 3
+
+// Add some easy styling to the page. 
+// Add a search bar to the landing page that allows searching for a specific model. 
+// Add a button to the landing page that allows sorting the list of cars by price. 
+// Add a button to the landing page that allows sorting the list of cars by year. 
+// Add a button to the landing page that allows sorting the list of cars by model. 
+// Add a button to the landing page that allows sorting the list of cars by make. 
+// Add a button to the landing page that allows sorting the list of cars by type. 
+// Add a button to the landing page that allows sorting the list of cars by color. 
+// Add a button to the landing page that allows sorting the list of cars by mileage. 
+// Add a button to the landing page that allows sorting the list of cars by fuel type. 
+// Add a button to the landing page that allows sorting the list of cars by engine size. 
+// Add a button to the landing page that allows sorting the list of cars by horsepower. 
+// Add a button to the landing page that allows sorting the list of cars by transmission. 
+// Add a button to the landing page that allows sorting the list of cars by body type. 
+// Add a button to the landing page that allows sorting the list of cars by drive train. 
+// Add a button to the landing page that allows sorting the list of cars by number of doors. 
+// Add a button to the landing page that allows sorting the list of cars by number of seats. 
+// Add a button to the landing page that allows sorting the list of cars by number of wheels. 
+// Add a button to the landing page that allows sorting the list of cars by condition. 
+// Add a button to the landing page that allows sorting the list of cars by location. 
+// Add a button to the landing page that allows sorting the list of cars by description. 
+// Add a button to the landing page that allows sorting the list of cars by image. 
+// Add a button to the landing page that allows sorting the list of cars by thumbnail. 
+// Add a button to the landing page that allows sorting the list of cars by video. 
+// Add a button to the landing page that allows sorting the list of cars by features. 
+// Add a button to the landing page that allows sorting the list of cars by safety features. 
+// Add a button to the landing page that allows sorting the list
+
+=======
+Suggestion 4
+
+// Add some easy styling to the page. 
+// Add a button that sorts the list by price (ascending and descending). 
+// Add a button that filters the list by brand (e.g. BMW, Ford, etc). 
+// Add a button that filters the list by color (e.g. red, green, etc). 
+// Add a button that filters the list by year (e.g. 2016, 2017, etc). 
+// Add a button that filters the list by fuel (e.g. diesel, gasoline, etc). 
+// Add a button that filters the list by type (e.g. SUV, Sedan, etc). 
+// Add a button that filters the list by brand and type (e.g. BMW and SUV, Ford and Sedan, etc). 
+// Add a button that filters the list by brand and year (e.g. BMW and 2016, Ford and 2017, etc). 
+// Add a button that filters the list by brand and fuel (e.g. BMW and diesel, Ford and gasoline, etc). 
+// Add a button that filters the list by color and type (e.g. red and SUV, green and Sedan, etc). 
+// Add a button that filters the list by color and year (e.g. red and 2016, green and 2017, etc). 
+// Add a button that filters the list by color and fuel (e.g. red and diesel, green and gasoline, etc). 
+// Add a button that filters the list by type and year (e.g. SUV and 2016, Sedan and 2017, etc). 
+// Add a button that filters the list by type and fuel (e.g. SUV and diesel, Sedan and gasoline, etc). 
+// Add a button that filters the list by year and fuel (e.g. 2016 and diesel, 2017 and gasoline, etc). 
+// Add a button that filters the list by brand, type and year (e.g. BMW, SUV and 2016, Ford, Sedan and 2017, etc). 
+// Add a button that filters the list by brand, type and fuel (e.g. BMW, SUV and diesel, Ford, Sedan and gasoline, etc). 
+// Add a button that filters the list by brand, year and fuel (e.g. BMW, 2016 and diesel, Ford, 2017 and gasoline, etc).
+
+=======
+Suggestion 5
+
+// Add some easy styling to the page. You can use Bootstrap or any other styling framework. 
+// Add a button to the landing page that will display only the cars with a price over 30.000. 
+// Add a button to the landing page that will display all the cars again.
+// Add a button to the landing page that will display the cars in alphabetical order by brand name. 
+// Add a button to the landing page that will display the cars in reverse alphabetical order by brand name. 
+// Add a button to the landing page that will display the cars in alphabetical order by car model. 
+// Add a button to the landing page that will display the cars in reverse alphabetical order by car model. 
+// Add a button to the landing page that will display the cars in alphabetical order by car year. 
+// Add a button to the landing page that will display the cars in reverse alphabetical order by car year. 
+// Add a button to the landing page that will display the cars in alphabetical order by car price. 
+// Add a button to the landing page that will display the cars in reverse alphabetical order by car price. 
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>
+          Your app in App.js
+        </p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+### 1.2.2. Create a new React project
+
+Open a command prompt and navigate to the folder where you want to create your project. Run the following command to create a new React project:
+
+```bash
+npx create-react-app frontend
+```
+
+### 1.2.3. Start the React project
+
+Navigate to the newly created project folder and start the React project:
+
+```bash
+cd frontend
+npm start
+```
+
+### 1.2.4. Add Bootstrap to the React project
+
+```bash
+npm install react-bootstrap bootstrap
+```
+
+### 1.2.5. Add React Router to the React project
+
+```bash
+npm install react-router-dom
+```
+
+### 1.2.6. Add a .gitignore file to the React project
+
+```bash
+node_modules
+build
+```
+
+### 1.2.7. Add a folder structure to the React project
+
+```bash
+frontend
+├───public
+└───src
+    ├───components
+    ├───data
+    └───
+
+=======
+Suggestion 6
+
+// Add some easy styling to the page. You can use any styling library you like or just use plain css
+// Add a simple form that allows to filter the cars by brand, model, year, fuel type and price. The form should have a submit button that will filter the cars and display only the filtered cars. 
+// The form should be a separate component that is reusable and can be used on any page. 
+// Add a button to the landing page that will sort the cars by price and display them from the cheapest to the most expensive
+// Add a button to the landing page that will sort the cars by year and display them from the oldest to the newest
+// Add a button to the landing page that will sort the cars by brand and display them alphabetically
+// Add a button to the landing page that will sort the cars by model and display them alphabetically
+// Add a button to the landing page that will sort the cars by fuel type and display them alphabetically
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+// Add a button to the landing page that will reset the sorting and display the cars in the original order
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Cars</h1>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+=======
+Suggestion 7
+
+// Add some easy styling to the page. You can also use a css framework if you want to.
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Car Information</h1>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+
+=======
+Suggestion 8
+
+// Add some easy styling to the page. 
+// Add a filter for the list of cars that filters the list of cars by brand. 
+// Add a form to add a new car to the list of cars. 
+// Add a button to delete a car from the list of cars. 
+// Add a button to edit a car in the list of cars. 
+// Add a button to sort the list of cars by price. 
+// Add a button to sort the list of cars by brand. 
+// Add a button to sort the list of cars by model. 
+// Add a button to sort the list of cars by year. 
+// Add a button to sort the list of cars by color. 
+// Add a button to sort the list of cars by condition. 
+// Add a button to sort the list of cars by mileage. 
+// Add a button to sort the list of cars by fuel. 
+// Add a button to sort the list of cars by transmission. 
+// Add a button to sort the list of cars by bodyType. 
+// Add a button to sort the list of cars by location. 
+// Add a button to sort the list of cars by description. 
+// Add a button to sort the list of cars by image. 
+// Add a button to sort the list of cars by phone. 
+// Add a button to sort the list of cars by email. 
+// Add a button to sort the list of cars by price. 
+// Add a button to sort the list of cars by brand. 
+// Add a button to sort the list of cars by model. 
+// Add a button to sort the list of cars by year. 
+// Add a button to sort the list of cars by color. 
+// Add a button to sort the list of cars by condition. 
+// Add a button to sort the list of cars by mileage. 
+// Add a button to sort the list of cars by fuel. 
+// Add a button to sort the list of cars by transmission. 
+// Add a button to sort the list of cars by bodyType. 
+// Add a button to sort the list of cars by location. 
+// Add a button to sort the list of cars by description. 
+// Add a button to sort the list of cars by image. 
+// Add a button to sort the list of cars by phone. 
+// Add a button to sort the list of cars by email. 
+// Add a button to sort the list of cars by
+
+=======
+Suggestion 9
+
+// Add some easy styling to the page. 
+// Add a link to a page that displays the details of a car (use the car id from the json file to get the car details). 
+// On the details page, display the car details and add a link to go back to the landing page. 
+// Create a new page that displays a form to add a new car. 
+// Add a link to the landing page and the details page to go to the new car page. 
+// When the form is submitted, add the new car to the json file. 
+// Add a link to the landing page to delete a car. 
+// When the delete link is clicked, delete the car from the json file. 
+// Add a link to the landing page to update a car. 
+// When the update link is clicked, display a form with the car details. 
+// When the form is submitted, update the car details in the json file. 
+// Add a link to the landing page to sort the cars by price or name. 
+// When the link is clicked, sort the cars by price or name. 
+// Add a link to the landing page to filter the cars by make. 
+// When the link is clicked, display a form with a dropdown of the makes (from the json file). 
+// When the form is submitted, filter the cars by make. 
+// Add a link to the landing page to filter the cars by price range. 
+// When the link is clicked, display a form with two text boxes to enter the price range. 
+// When the form is submitted, filter the cars by price range. 
+// Add a link to the landing page to filter the cars by year. 
+// When the link is clicked, display a form with two text boxes to enter the year range. 
+// When the form is submitted, filter the cars by year range. 
+// Add a link to the landing page to filter the cars by color. 
+// When the link is clicked, display a form with a dropdown of the colors (from the json file). 
+// When the form is submitted, filter the cars by color. 
+// Add a link to the landing page to filter the cars by mileage. 
+// When the link is clicked, display a form with two text boxes to enter the mileage range. 
+// When the form is submitted, filter the cars by mileage range. 
+// Add a link to the landing page to filter the cars by engine size
+
+=======
+Suggestion 10
+
+// Add some easy styling to the page. Bootstrap is preferred
+// Add a search bar to the page that filters the list of cars by make and model. The search bar should be able to filter by make and model separately. Search should happen on key press, not on submit
+// Add a button to the page that sorts the list of cars by price in ascending or descending order. The button should toggle between ascending and descending
+// Add a button to the page that sorts the list of cars by mileage in ascending or descending order. The button should toggle between ascending and descending
+
+// Path: frontend\src\App.js
+import React, { useState, useEffect } from 'react';
+import CarList from './components/CarList';
+import Search from './components/Search';
+import Sort from './components/Sort';
+import axios from 'axios';
+
+function App() {
+  const [cars, setCars] = useState([]);
+  const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('');
+  const [sortDirection, setSortDirection] = useState('');
+
+  useEffect(() => {
+    const getCars = async () => {
+      const res = await axios.get('http://localhost:5000/cars');
+      setCars(res.data);
+    }
+
+    getCars();
+  }, []);
+
+  return (
+    <div className="container">
+      <Search search={search} setSearch={setSearch} />
+      <Sort sort={sort} setSort={setSort} sortDirection={sortDirection} setSortDirection={setSortDirection} />
+      <CarList cars={cars} search={search} sort={sort} sortDirection={sortDirection} />
+    </div>
+  );
+}
+
+export default App;
+
+// Path: frontend\src\components\CarList.js
+import React from 'react';
+import Car from './Car';
+
+const CarList = ({ cars, search, sort, sortDirection }) => {
+  return (
+    <div className="row">
+      {cars.filter(car => (car.make.toLowerCase().includes(search.toLowerCase()) || car.model.toLowerCase().includes(search.toLowerCase()))).sort((a, b) => {
+        if (sort === 'price' && sortDirection === 'asc') {
+          return a.price - b.price;
+        } else if (sort === 'price' && sortDirection === 'desc') {
+          return b.price - a.price;
+        } else if (sort === 'mileage' && sortDirection === 'asc') {
+          return a.mileage
